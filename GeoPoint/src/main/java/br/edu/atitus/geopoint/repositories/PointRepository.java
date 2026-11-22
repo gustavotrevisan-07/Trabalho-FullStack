@@ -55,15 +55,15 @@ public class PointRepository {
     }
 
     public Optional<PointEntity> findById(UUID id) {
-        String sql = "SELECT id, name, description, latitude, longitude FROM points WHERE id + ?";
+        String sql = "SELECT id, name, description, latitude, longitude FROM points WHERE id = ?";
         return jdbcTemplate.query(sql, mapper, id).stream().findFirst();
-
     }
+
 
     public void update(PointEntity point) {
         String sql = """
         UPDATE points
-        SET name = ?, description = ?, latitude = ?, longitude = ? 
+        SET name = ?, description = ?, latitude = ?, longitude = ?
         WHERE id = ?
         """;
 
@@ -80,5 +80,6 @@ public class PointRepository {
     public void delete(UUID id) {
         jdbcTemplate.update("DELETE FROM points WHERE id = ?", id);
     }
+
 
 }
