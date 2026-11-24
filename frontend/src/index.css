@@ -1,0 +1,403 @@
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #171717;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --text: #171717;
+  --text-secondary: #737373;
+  --bg: #ffffff;
+  --border: #e5e5e5;
+  --surface: #f7f7f7;
+  --black: #171717;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 0;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+button {
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  padding: 10px 18px;
+  background: var(--black);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #404040;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #737373;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Layout da listagem */
+
+.pagina-pontos {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.topo {
+  height: 80px;
+  padding: 0 6%;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-placeholder {
+  width: 48px;
+  height: 48px;
+  border: 1px dashed #c7c7c7;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a3a3a3;
+  font-size: 9px;
+}
+
+.nome-sistema {
+  font-size: 18px;
+  font-weight: 700;
+  color: #171717;
+}
+
+.conteudo-pontos {
+  width: 90%;
+  max-width: 1100px;
+  margin: 55px auto;
+}
+
+.cabecalho-pontos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.cabecalho-pontos h1 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.cabecalho-pontos p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao-principal {
+  background: #171717;
+  color: #ffffff;
+  border: 1px solid #171717;
+}
+
+.botao-principal:hover {
+  background: #404040;
+}
+
+.lista-pontos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-ponto {
+  padding: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+}
+
+.informacoes-ponto h2 {
+  font-size: 19px;
+  margin: 0 0 8px;
+}
+
+.informacoes-ponto p {
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.coordenadas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  color: #737373;
+}
+
+.coordenadas strong {
+  color: #404040;
+}
+
+.acoes-ponto {
+  display: flex;
+  gap: 10px;
+}
+
+.botao-secundario {
+  background: #ffffff;
+  color: #171717;
+  border: 1px solid #d4d4d4;
+}
+
+.botao-secundario:hover {
+  background: #f5f5f5;
+}
+
+.botao-excluir {
+  background: #171717;
+  color: #ffffff;
+  border: 1px solid #171717;
+}
+
+.botao-excluir:hover {
+  background: #404040;
+}
+
+.estado-vazio {
+  padding: 55px 20px;
+  text-align: center;
+  border: 1px dashed #d4d4d4;
+  border-radius: 7px;
+}
+
+.estado-vazio h2 {
+  font-size: 20px;
+}
+
+.estado-vazio p {
+  margin-bottom: 22px;
+}
+
+.mensagem {
+  padding: 20px;
+  color: #737373;
+}
+
+.mensagem-erro {
+  color: #b91c1c;
+}
+
+@media (max-width: 650px) {
+  .conteudo-pontos {
+    margin: 30px auto;
+  }
+
+  .cabecalho-pontos,
+  .card-ponto {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cabecalho-pontos h1 {
+    font-size: 26px;
+  }
+
+  .acoes-ponto {
+    width: 100%;
+  }
+
+  .acoes-ponto .botao {
+    flex: 1;
+  }
+}
+
+/* Formulário de cadastro */
+
+.formulario-container {
+  width: 90%;
+  max-width: 760px;
+  margin: 40px auto 60px;
+}
+
+.voltar-link {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #525252;
+  font-size: 14px;
+}
+
+.voltar-link:hover {
+  color: #000000;
+}
+
+.formulario-card {
+  padding: 35px;
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+.formulario-cabecalho {
+  margin-bottom: 30px;
+}
+
+.formulario-cabecalho h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.formulario-cabecalho p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.formulario-ponto {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.campo-formulario label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+  color: #a3a3a3;
+}
+
+.campo-formulario textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.campo-formulario small {
+  color: #888888;
+  font-size: 12px;
+}
+
+.campos-coordenadas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.botoes-formulario {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 22px;
+  border-top: 1px solid #eeeeee;
+}
+
+.formulario-erro {
+  padding: 13px;
+  margin-bottom: 22px;
+  border: 1px solid #fecaca;
+  border-radius: 5px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .formulario-container {
+    margin-top: 25px;
+  }
+
+  .formulario-card {
+    padding: 22px;
+  }
+
+  .campos-coordenadas {
+    grid-template-columns: 1fr;
+  }
+
+  .botoes-formulario {
+    flex-direction: column-reverse;
+  }
+
+  .botoes-formulario .botao {
+    width: 100%;
+  }
+}
